@@ -6,6 +6,7 @@
       <class name="automation.ElementsTest">
         <methods>
           <include name="verifyRadioButton"/>
+          <include name="verifyWebTables"/>
           <include name="openBrowser"/>
           <include name="verifyTextBox"/>
           <include name="verifyCheckBox"/>

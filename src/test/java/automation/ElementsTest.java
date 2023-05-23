@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,6 +13,7 @@ import org.testng.annotations.Test;
 import elements.CheckBox;
 import elements.RadioButton;
 import elements.TextBox;
+import elements.WebTables;
 
 public class ElementsTest extends Base {
 	WebDriver driver;
@@ -69,19 +71,52 @@ public class ElementsTest extends Base {
 
 	@Test(dependsOnMethods = { "verifyCheckBox" })
 	public void verifyRadioButton() throws InterruptedException {
-		RadioButton radio=new RadioButton(driver);
+		RadioButton radio = new RadioButton(driver);
 		radio.radioButton().click();
-		Thread.sleep(2000);
-		
-		radio.yesButton().click();
+		Actions click = new Actions(driver);
+		click.moveToElement(radio.yesButton()).click().build().perform();
+
 		Assert.assertEquals(radio.result().getText(), "Yes");
-		
-		radio.impressiverButton().click();
+		click.moveToElement(radio.impressiverButton()).click().build().perform();
 		Assert.assertEquals(radio.result().getText(), "Impressive");
-		
 		Assert.assertFalse(radio.noButton().isEnabled());
 	}
-	
+
+	@Test(dependsOnMethods = { "verifyRadioButton" })
+	public void verifyWebTables() throws InterruptedException {
+		WebTables table = new WebTables(driver);
+		table.clickTable();
+		
+		for (int i = 0; i < table.getFirstRow().size(); i++) {
+			String name = table.getFirstRow().get(i).getText();
+			if (name.equalsIgnoreCase("Alden")) {
+				table.editData().get(i).click();
+				break;
+			}
+		}
+		table.addLastName().clear();
+		table.addLastName().sendKeys("Sharma");
+		table.submit().click();;
+		
+		table.addData().click();
+		table.addFirstName().sendKeys("Sachin");
+		table.addLastName().sendKeys("Sharma");
+		table.addEmail().sendKeys("a@a.com");
+		table.addAge().sendKeys("23");
+		table.addsalary().sendKeys("10000");
+		table.addDepartment().sendKeys("IT");
+		table.submit().click();
+		
+		for (int i = 0; i < table.getFirstRow().size(); i++) {
+			String name = table.getFirstRow().get(i).getText();
+			if (name.equalsIgnoreCase("Sachin")) {
+				Assert.assertTrue(true);
+				break;
+			}
+		}
+		table.searchBox().sendKeys("Kier");
+	}
+
 	@AfterTest
 	public void closeBrowser() {
 		driver.close();
