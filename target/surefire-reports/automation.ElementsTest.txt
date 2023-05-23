@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: automation.ElementsTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 13.75 s <<< FAILURE! - in automation.ElementsTest
+verifyRadioButton(automation.ElementsTest)  Time elapsed: 3.242 s  <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <input type="radio" id="yesRadio" name="like" class="custom-control-input"> is not clickable at point (426, 286). Other element would receive the click: <label class="custom-control-label" for="yesRadio">...</label>
+  (Session info: chrome=113.0.5672.127)
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e990683186c58cb6902f50b7440ef711, clickElement {id=D29F007E265EC55F1C36ECDB592208A8_element_97}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\sachi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63397}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63397/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e990683186c58cb6902f50b7440ef711)] -> xpath: //input[@id='yesRadio']]
+Session ID: e990683186c58cb6902f50b7440ef711
+	at automation.ElementsTest.verifyRadioButton(ElementsTest.java:76)
+
