@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class WebTables {
-	WebDriver driver;
 
 	public WebTables(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -53,8 +52,8 @@ public class WebTables {
 	@FindBy(xpath = "//div[@class='rt-table'] //div[@role='row']/div[1]")
 	List<WebElement> firstRow;
 
-	public void clickTable() {
-		clickWebTables.click();;
+	public WebElement clickTable() {
+		return clickWebTables;
 	}
 
 	public WebElement addData() {

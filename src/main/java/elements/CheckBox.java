@@ -9,8 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CheckBox {
 
-	WebDriver driver;
-
 	public CheckBox(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}

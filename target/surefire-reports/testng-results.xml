@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-23T21:45:57 IST" name="Surefire suite" finished-at="2023-05-23T21:46:14 IST" duration-ms="16819">
+  <suite started-at="2023-05-24T14:03:03 IST" name="Surefire suite" finished-at="2023-05-24T14:03:15 IST" duration-ms="12353">
     <groups>
     </groups>
-    <test started-at="2023-05-23T21:45:57 IST" name="Surefire test" finished-at="2023-05-23T21:46:14 IST" duration-ms="16819">
+    <test started-at="2023-05-24T14:03:03 IST" name="Surefire test" finished-at="2023-05-24T14:03:15 IST" duration-ms="12353">
       <class name="automation.ElementsTest">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-23T21:45:57 IST" name="openBrowser" finished-at="2023-05-23T21:46:03 IST" duration-ms="5956" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-24T14:03:03 IST" name="openBrowser" finished-at="2023-05-24T14:03:10 IST" duration-ms="6974" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="verifyTextBox()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-23T21:46:03 IST" name="verifyTextBox" finished-at="2023-05-23T21:46:04 IST" duration-ms="650" status="PASS">
+        <test-method signature="verifyTextBox()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-24T14:03:10 IST" name="verifyTextBox" finished-at="2023-05-24T14:03:11 IST" duration-ms="765" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTextBox -->
-        <test-method signature="verifyCheckBox()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-23T21:46:04 IST" name="verifyCheckBox" finished-at="2023-05-23T21:46:06 IST" depends-on-methods="automation.ElementsTest.verifyTextBox" duration-ms="2174" status="PASS">
+        <test-method signature="verifyCheckBox()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-24T14:03:11 IST" name="verifyCheckBox" finished-at="2023-05-24T14:03:13 IST" depends-on-methods="automation.ElementsTest.verifyTextBox" duration-ms="2011" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCheckBox -->
-        <test-method signature="verifyRadioButton()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-23T21:46:06 IST" name="verifyRadioButton" finished-at="2023-05-23T21:46:07 IST" depends-on-methods="automation.ElementsTest.verifyCheckBox" duration-ms="544" status="PASS">
+        <test-method signature="verifyRadioButton()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-24T14:03:13 IST" name="verifyRadioButton" finished-at="2023-05-24T14:03:13 IST" depends-on-methods="automation.ElementsTest.verifyCheckBox" duration-ms="463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRadioButton -->
-        <test-method signature="verifyWebTables()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-23T21:46:07 IST" name="verifyWebTables" finished-at="2023-05-23T21:46:14 IST" depends-on-methods="automation.ElementsTest.verifyRadioButton" duration-ms="7259" status="PASS">
+        <test-method signature="verifyWebTables()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-24T14:03:13 IST" name="verifyWebTables" finished-at="2023-05-24T14:03:15 IST" depends-on-methods="automation.ElementsTest.verifyRadioButton" duration-ms="1962" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyWebTables -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-23T21:46:14 IST" name="closeBrowser" finished-at="2023-05-23T21:46:14 IST" duration-ms="187" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.ElementsTest@1df82230]" started-at="2023-05-24T14:03:15 IST" name="closeBrowser" finished-at="2023-05-24T14:03:15 IST" duration-ms="127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

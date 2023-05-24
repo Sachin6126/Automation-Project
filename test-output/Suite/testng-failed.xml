@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="methods" name="Test(failed)">
+    <classes>
+      <class name="automation.ElementsTest">
+        <methods>
+          <include name="verifyRadioButton"/>
+          <include name="verifyWebTables"/>
+          <include name="verifyTextBox"/>
+          <include name="openBrowser"/>
+          <include name="verifyCheckBox"/>
+          <include name="closeBrowser"/>
+          <include name="verifyButtons"/>
+        </methods>
+      </class> <!-- automation.ElementsTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

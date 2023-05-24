@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TextBox {
-	WebDriver driver;
 
 	public TextBox(WebDriver driver) {
 		PageFactory.initElements(driver, this);
