@@ -1,9 +1,12 @@
 package automation;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -12,14 +15,19 @@ import org.testng.annotations.Test;
 
 import elements.Buttons;
 import elements.CheckBox;
+import elements.DynamicProperty;
 import elements.Links;
 import elements.RadioButton;
 import elements.TextBox;
+import elements.UploadandDownload;
 import elements.WebTables;
 
 public class ElementsTest extends Base {
+	WebDriver driver;
+
 	@BeforeTest
 	public void openBrowser() throws IOException {
+		deleteReport();
 		driver = initBrowser();
 		driver.get(url);
 	}
@@ -37,6 +45,8 @@ public class ElementsTest extends Base {
 		textBox.email().sendKeys(email);
 		textBox.currentAddress().sendKeys(curAddress);
 		textBox.permanentAddress().sendKeys(perAddress);
+		Actions click = new Actions(driver);
+		click.scrollByAmount(0, 200).build().perform();
 		textBox.submit().click();
 
 		for (int i = 0; i < textBox.verifyOutput().size(); i++) {
@@ -51,6 +61,8 @@ public class ElementsTest extends Base {
 	public void verifyCheckBox() {
 		CheckBox check = new CheckBox(driver);
 		check.checkBox().click();
+		Actions click = new Actions(driver);
+		click.scrollByAmount(0, 200).build().perform();
 		check.arrow().click();
 		check.plusButton().click();
 
@@ -67,9 +79,10 @@ public class ElementsTest extends Base {
 	}
 
 	@Test
-	public void verifyRadioButton() {
+	public void verifyRadioButton() throws InterruptedException {
 		RadioButton radio = new RadioButton(driver);
 		radio.radioButton().click();
+		Thread.sleep(500);
 		Actions click = new Actions(driver);
 		click.moveToElement(radio.yesButton()).click().build().perform();
 
@@ -142,6 +155,7 @@ public class ElementsTest extends Base {
 
 	@Test
 	public void verifyLinks() throws InterruptedException {
+
 		Links links = new Links(driver);
 		links.clickLinks().click();
 		links.homeLink().click();
@@ -153,22 +167,73 @@ public class ElementsTest extends Base {
 		System.out.println(driver.getTitle());
 		driver.close();
 		driver.switchTo().window(parent);
-		int j=0;
-		for(int i=2;i<links.allLinks().size();i++) {
+		int j = 0;
+		for (int i = 2; i < links.allLinks().size(); i++) {
 			links.allLinks().get(i).click();
 			Thread.sleep(500);
-			String actualCode=links.linkResponse().get(0).getText();
-			String expectedCode=links.codes().get(j);
-			
+			String actualCode = links.linkResponse().get(0).getText();
+			String expectedCode = links.codes().get(j);
+
 			Assert.assertEquals(actualCode, expectedCode);
 			j++;
 		}
+
+	}
+
+	@Test
+	public void verifyUploadnDownload() throws InterruptedException {
+		UploadandDownload ud = new UploadandDownload(driver);
+		Actions click = new Actions(driver);
+		click.scrollByAmount(0, 200).build().perform();
+		ud.clickUpnD().click();
+		ud.downloadButton().click();
+
+		File file = new File(downloadPath + "\\sampleFile.jpeg");
+		Thread.sleep(5000);
+
+		if (file.exists()) {
+			Assert.assertTrue(true);
+			System.out.println("Downloaded file found");
+		} else {
+			System.out.println("Downloaded file not found");
+			Assert.assertTrue(false);
+		}
+
+		Thread.sleep(500);
+		file.delete();
+
+		if (file.exists()) {
+			System.out.println("Downloaded file not deleted");
+			Assert.assertTrue(false);
+		} else {
+			System.out.println("Downloaded file deleted");
+			Assert.assertTrue(true);
+		}
+
+		ud.uploadButton().sendKeys(downloadPath + "\\sampleUploadFile.txt");
+		Thread.sleep(2000);
+		if (ud.VerifyUpload().getText().contains("sampleUploadFile.txt")) {
+			Assert.assertTrue(true);
+			System.out.println("file uploaded successfully");
+		} else {
+			System.out.println("upload failed");
+			Assert.assertTrue(false);
+		}
+	}
+
+	@Test
+	public void verifyDynamicProperty() {
+		DynamicProperty property = new DynamicProperty(driver);
+		Actions click = new Actions(driver);
+		click.scrollByAmount(0, 200).build().perform();
+		property.clickDynamicProperty().click();
 		
 
 	}
 
 	@AfterTest
 	public void closeBrowser() {
+	
 		driver.close();
 	}
 }

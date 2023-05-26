@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-24T16:54:01 IST" name="Default suite" finished-at="2023-05-24T16:54:25 IST" duration-ms="24444">
+  <suite started-at="2023-05-26T16:02:46 IST" name="Suite" finished-at="2023-05-26T16:03:12 IST" duration-ms="25967">
     <groups>
     </groups>
-    <test started-at="2023-05-24T16:54:01 IST" name="Default test" finished-at="2023-05-24T16:54:25 IST" duration-ms="24444">
+    <test started-at="2023-05-26T16:02:46 IST" name="Test" finished-at="2023-05-26T16:03:12 IST" duration-ms="25967">
       <class name="automation.ElementsTest">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:01 IST" name="openBrowser" finished-at="2023-05-24T16:54:10 IST" duration-ms="9505" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:46 IST" name="openBrowser" finished-at="2023-05-26T16:02:51 IST" duration-ms="5209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="verifyButtons()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:10 IST" name="verifyButtons" finished-at="2023-05-24T16:54:11 IST" duration-ms="917" status="PASS">
+        <test-method signature="verifyButtons()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:51 IST" name="verifyButtons" finished-at="2023-05-26T16:02:52 IST" duration-ms="584" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyButtons -->
-        <test-method signature="verifyCheckBox()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:11 IST" name="verifyCheckBox" finished-at="2023-05-24T16:54:14 IST" duration-ms="2557" status="PASS">
+        <test-method signature="verifyCheckBox()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:52 IST" name="verifyCheckBox" finished-at="2023-05-26T16:02:53 IST" duration-ms="1644" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCheckBox -->
-        <test-method signature="verifyLinks()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:14 IST" name="verifyLinks" finished-at="2023-05-24T16:54:22 IST" duration-ms="8082" status="PASS">
+        <test-method signature="verifyDynamicProperty()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:53 IST" name="verifyDynamicProperty" finished-at="2023-05-26T16:02:54 IST" duration-ms="340" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDynamicProperty -->
+        <test-method signature="verifyLinks()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:54 IST" name="verifyLinks" finished-at="2023-05-26T16:03:00 IST" duration-ms="6091" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLinks -->
-        <test-method signature="verifyRadioButton()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:22 IST" name="verifyRadioButton" finished-at="2023-05-24T16:54:22 IST" duration-ms="621" status="PASS">
+        <test-method signature="verifyRadioButton()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:00 IST" name="verifyRadioButton" finished-at="2023-05-26T16:03:01 IST" duration-ms="972" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRadioButton -->
-        <test-method signature="verifyTextBox()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:22 IST" name="verifyTextBox" finished-at="2023-05-24T16:54:23 IST" duration-ms="727" status="PASS">
+        <test-method signature="verifyTextBox()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:01 IST" name="verifyTextBox" finished-at="2023-05-26T16:03:02 IST" duration-ms="947" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTextBox -->
-        <test-method signature="verifyWebTables()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:23 IST" name="verifyWebTables" finished-at="2023-05-24T16:54:25 IST" duration-ms="1819" status="PASS">
+        <test-method signature="verifyUploadnDownload()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:02 IST" name="verifyUploadnDownload" finished-at="2023-05-26T16:03:10 IST" duration-ms="8095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUploadnDownload -->
+        <test-method signature="verifyWebTables()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:10 IST" name="verifyWebTables" finished-at="2023-05-26T16:03:12 IST" duration-ms="1873" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyWebTables -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.ElementsTest@49139829]" started-at="2023-05-24T16:54:25 IST" name="closeBrowser" finished-at="2023-05-24T16:54:25 IST" duration-ms="142" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:12 IST" name="closeBrowser" finished-at="2023-05-26T16:03:12 IST" duration-ms="156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- automation.ElementsTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -5,9 +5,10 @@
     <classes>
       <class name="automation.ElementsTest">
         <methods>
+          <include name="verifyRadioButton"/>
           <include name="openBrowser"/>
+          <include name="verifyCheckBox"/>
           <include name="closeBrowser"/>
-          <include name="verifyLinks"/>
         </methods>
       </class> <!-- automation.ElementsTest -->
     </classes>
