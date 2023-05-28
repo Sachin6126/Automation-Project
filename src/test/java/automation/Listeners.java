@@ -19,28 +19,27 @@ public class Listeners implements ITestListener {
 	 * and may generate report for another test. So thread local will generate
 	 * report for intended test only.
 	 */
-	// ThreadLocal<ExtentTest> extTest=new ThreadLocal<ExtentTest>();
-	ExtentReports report = rp.getReports();
+//	 ThreadLocal<ExtentTest> extTest=new ThreadLocal<ExtentTest>();
+	 ExtentReports report = rp.getReports();
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		test = report.createTest(result.getMethod().getMethodName());
-		// extTest.set(test); //use this in parallel mode
-
+//		extTest.set(test); //use this in parallel mode
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		test.log(Status.PASS, "Success");
-
-		// extTest.get().log(Status.PASS, "success");
-
+//		extTest.set(test);
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getThrowable());
 
+//		extTest.get().fail(result.getThrowable());
+		
 		String name = result.getMethod().getMethodName();
 		WebDriver driver = null;
 		Base screen = new Base();
@@ -61,7 +60,7 @@ public class Listeners implements ITestListener {
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
+		test.skip("Test Skipped");
 
 	}
 

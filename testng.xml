@@ -4,9 +4,16 @@
 	<listeners>
 		<listener class-name="automation.Listeners"></listener>
 	</listeners>
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="automation.ElementsTest"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="automation.ElementsTest" />
+		</classes>
+	</test>
+	<test name="Test1">
+		<classes>
+			<class name="automation.FormsTest" />
+		</classes>
+	</test><!--
+	Test -->
+</suite> <!--
+Suite -->

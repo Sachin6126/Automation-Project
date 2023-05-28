@@ -1,53 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-26T16:02:46 IST" name="Suite" finished-at="2023-05-26T16:03:12 IST" duration-ms="25967">
+  <suite started-at="2023-05-28T19:43:50 IST" name="Default suite" finished-at="2023-05-28T19:44:21 IST" duration-ms="31395">
     <groups>
     </groups>
-    <test started-at="2023-05-26T16:02:46 IST" name="Test" finished-at="2023-05-26T16:03:12 IST" duration-ms="25967">
-      <class name="automation.ElementsTest">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:46 IST" name="openBrowser" finished-at="2023-05-26T16:02:51 IST" duration-ms="5209" status="PASS">
+    <test started-at="2023-05-28T19:43:50 IST" name="Default test" finished-at="2023-05-28T19:44:21 IST" duration-ms="31395">
+      <class name="automation.FormsTest">
+        <test-method signature="verifyForms(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:automation.FormsTest@74fe5c40]" started-at="2023-05-28T19:43:50 IST" name="verifyForms" data-provider="getData" finished-at="2023-05-28T19:44:02 IST" duration-ms="12452" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[male]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[February]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2024]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[m]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[sports]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[n]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[d]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method signature="verifyButtons()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:51 IST" name="verifyButtons" finished-at="2023-05-26T16:02:52 IST" duration-ms="584" status="PASS">
+        </test-method> <!-- verifyForms -->
+        <test-method signature="verifyForms(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:automation.FormsTest@74fe5c40]" started-at="2023-05-28T19:44:02 IST" name="verifyForms" data-provider="getData" finished-at="2023-05-28T19:44:12 IST" duration-ms="9479" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abc]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[cde]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[abc]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[female]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[adjhjhf]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[February]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1998]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[e]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[reading]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[A-1 rohini delhi]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[n]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[d]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyButtons -->
-        <test-method signature="verifyCheckBox()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:52 IST" name="verifyCheckBox" finished-at="2023-05-26T16:02:53 IST" duration-ms="1644" status="PASS">
+        </test-method> <!-- verifyForms -->
+        <test-method signature="verifyForms(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:automation.FormsTest@74fe5c40]" started-at="2023-05-28T19:44:12 IST" name="verifyForms" data-provider="getData" finished-at="2023-05-28T19:44:21 IST" duration-ms="9405" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sjb]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[kdk]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[a@a.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[other]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0000000000]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[February]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[p]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[music]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[A-1 rohini delhi]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[u]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[a]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCheckBox -->
-        <test-method signature="verifyDynamicProperty()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:53 IST" name="verifyDynamicProperty" finished-at="2023-05-26T16:02:54 IST" duration-ms="340" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDynamicProperty -->
-        <test-method signature="verifyLinks()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:02:54 IST" name="verifyLinks" finished-at="2023-05-26T16:03:00 IST" duration-ms="6091" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLinks -->
-        <test-method signature="verifyRadioButton()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:00 IST" name="verifyRadioButton" finished-at="2023-05-26T16:03:01 IST" duration-ms="972" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRadioButton -->
-        <test-method signature="verifyTextBox()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:01 IST" name="verifyTextBox" finished-at="2023-05-26T16:03:02 IST" duration-ms="947" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyTextBox -->
-        <test-method signature="verifyUploadnDownload()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:02 IST" name="verifyUploadnDownload" finished-at="2023-05-26T16:03:10 IST" duration-ms="8095" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUploadnDownload -->
-        <test-method signature="verifyWebTables()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:10 IST" name="verifyWebTables" finished-at="2023-05-26T16:03:12 IST" duration-ms="1873" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyWebTables -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:automation.ElementsTest@37654521]" started-at="2023-05-26T16:03:12 IST" name="closeBrowser" finished-at="2023-05-26T16:03:12 IST" duration-ms="156" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- automation.ElementsTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- verifyForms -->
+      </class> <!-- automation.FormsTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

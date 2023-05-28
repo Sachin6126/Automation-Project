@@ -2,12 +2,15 @@ package automation;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -29,7 +32,7 @@ public class ElementsTest extends Base {
 	public void openBrowser() throws IOException {
 		deleteReport();
 		driver = initBrowser();
-		driver.get(url);
+		driver.get(url + "elements");
 	}
 
 	@Test
@@ -227,13 +230,26 @@ public class ElementsTest extends Base {
 		Actions click = new Actions(driver);
 		click.scrollByAmount(0, 200).build().perform();
 		property.clickDynamicProperty().click();
-		
+		String text = property.headerText().getText();
+		Assert.assertEquals(text, "This text has random Id");
+		Assert.assertFalse(property.enableButtonAfter().isEnabled());
+
+		String a = property.colorButton().getCssValue("color");
+		Assert.assertEquals(a, "rgba(255, 255, 255, 1)");
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(property.enableButtonAfter()));
+		property.enableButtonAfter().click();
+
+		a = property.colorButton().getCssValue("color");
+		Assert.assertEquals(a, "rgba(220, 53, 69, 1)");
+		Assert.assertTrue(property.visibleButtonAfter().isDisplayed());
 
 	}
 
 	@AfterTest
 	public void closeBrowser() {
-	
+
 		driver.close();
 	}
 }

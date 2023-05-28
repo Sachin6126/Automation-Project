@@ -32,7 +32,7 @@ public class Base {
 		properties.load(file);
 		String browser = properties.getProperty("browser");
 		url = properties.getProperty("url");
-
+		
 		if (browser.contains("chrome")) {
 			ChromeOptions settings = new ChromeOptions();
 			

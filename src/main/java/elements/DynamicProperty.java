@@ -14,7 +14,7 @@ public class DynamicProperty {
 	@FindBy(xpath = "//span[text()='Dynamic Properties']")
 	WebElement clickDynamicProperty;
 
-	@FindBy(css = "p[id='7uRP8']")
+	@FindBy(css = "div[class='col-12 mt-4 col-md-6'] div p")
 	WebElement headerText;
 
 	@FindBy(css = "button[id='enableAfter']")
@@ -45,4 +45,5 @@ public class DynamicProperty {
 	public WebElement visibleButtonAfter() {
 		return visibleButtonAfter;
 	}
+	
 }
