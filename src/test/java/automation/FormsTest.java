@@ -1,10 +1,13 @@
 package automation;
 
 import java.io.IOException;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -12,14 +15,17 @@ import forms.PracticeForm;
 
 public class FormsTest extends Base {
 	WebDriver driver;
+	@BeforeMethod
+	public void initialize() throws IOException {
+		driver = initBrowser();
+		driver.get(url + "forms");
+	}
 
 	@Test(dataProvider = "getData")
 	public void verifyForms(String fName, String lName, String email, String gen, String phone, String months,
 			String years, String dates, String subject, String hobby, String address, String state, String city)
 			throws InterruptedException, IOException {
 
-		driver = initBrowser();
-		driver.get(url + "forms");
 		PracticeForm form = new PracticeForm(driver);
 		form.clickPracticeForm().click();
 		Actions click = new Actions(driver);
@@ -66,10 +72,13 @@ public class FormsTest extends Base {
 		form.currentAddress().sendKeys(address);
 		form.state().sendKeys(state, Keys.ENTER);
 		form.city().sendKeys(city, Keys.ENTER);
-		
-		driver.close();
 	}
 
+	@AfterMethod
+	public void closeBrowser() {
+		driver.close();
+	}
+	
 	@DataProvider
 	public Object[][] getData() {
 		Object data[][] = new Object[3][13];

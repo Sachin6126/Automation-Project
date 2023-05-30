@@ -4,16 +4,21 @@
 	<listeners>
 		<listener class-name="automation.Listeners"></listener>
 	</listeners>
-	<test thread-count="5" name="Test">
+	<test thread-count="5" name="Test Elements">
 		<classes>
 			<class name="automation.ElementsTest" />
 		</classes>
 	</test>
-	<test name="Test1">
+	<test name="Test Forms">
 		<classes>
 			<class name="automation.FormsTest" />
 		</classes>
-	</test><!--
-	Test -->
+	</test>
+	<test name="Test alerts, Frames and windows">
+		<classes>
+			<class name="automation.AlertFrameAndWindowTest"></class>
+		</classes>
+	</test>
+	<!--Test -->
 </suite> <!--
 Suite -->

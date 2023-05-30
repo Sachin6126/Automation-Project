@@ -7,8 +7,8 @@ public class ExtReport {
 	public ExtentReports report;
 
 	public ExtentReports getReports() {
-		String path = System.getProperty("user.dir") + "\\reports\\index.html";
-		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+		String reportPath = System.getProperty("user.dir") + "\\reports\\index.html";
+		ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
 		reporter.config().setDocumentTitle("Automation Project Report");
 		reporter.config().setReportName("Sachin");
 		report = new ExtentReports();
