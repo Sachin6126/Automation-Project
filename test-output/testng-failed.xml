@@ -5,8 +5,12 @@
     <classes>
       <class name="automation.AlertFrameAndWindowTest">
         <methods>
+          <include name="browserWindow"/>
+          <include name="verifyNestedFrame"/>
           <include name="closeBrowser"/>
+          <include name="verifyFrames"/>
           <include name="verifyAlerts"/>
+          <include name="verifyModal"/>
           <include name="initialize"/>
         </methods>
       </class> <!-- automation.AlertFrameAndWindowTest -->
