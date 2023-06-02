@@ -3,7 +3,6 @@ package automation;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -11,7 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import alertFrameAndWindow.Alerts;
 import alertFrameAndWindow.BrowserWindows;
 import alertFrameAndWindow.Frames;
@@ -45,6 +43,7 @@ public class AlertFrameAndWindowTest extends Base {
 
 		driver.close();
 		driver.switchTo().window(parent);
+		
 	}
 
 	@Test

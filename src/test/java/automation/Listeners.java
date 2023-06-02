@@ -4,45 +4,31 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 
-public class Listeners implements ITestListener {
+public class Listeners extends Base implements ITestListener {
 	ExtentTest test;
 	ExtReport rp = new ExtReport();
 
-	/*
-	 * To avoid mis-report in parallel mode we need to use Thread local, as in
-	 * parallel mode ExtentTest "test" object may be overwritten by another method
-	 * and may generate report for another test. So thread local will generate
-	 * report for intended test only.
-	 */
-//	 ThreadLocal<ExtentTest> extTest=new ThreadLocal<ExtentTest>();
-	 ExtentReports report = rp.getReports();
+	ExtentReports report = rp.getReports();
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		test = report.createTest(result.getMethod().getMethodName());
-//		extTest.set(test); //use this in parallel mode
+		test = report.createTest(result.getMethod().getMethodName()).assignAuthor("Sachin").assignDevice("Chrome");
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		test.log(Status.PASS, "Success");
-//		extTest.set(test);
+		test.pass("Success");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getThrowable());
-
-//		extTest.get().fail(result.getThrowable());
 		
 		String name = result.getMethod().getMethodName();
 		WebDriver driver = null;
-		Base screen = new Base();
 
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
@@ -51,7 +37,7 @@ public class Listeners implements ITestListener {
 
 		}
 		try {
-			test.addScreenCaptureFromPath(screen.getScreen(name, driver), name);
+			test.addScreenCaptureFromPath(getScreen(name, driver), name);
 		} catch (Exception e) {
 
 		}
