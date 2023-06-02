@@ -1,0 +1,6 @@
+.gitignore
+.settings
+Screenshot.png
+test-output/
+target/
+reports/
