@@ -32,21 +32,18 @@ public class Base {
 		properties.load(file);
 		String browser = properties.getProperty("browser");
 		url = properties.getProperty("url");
-		
+
 		if (browser.contains("chrome")) {
 			ChromeOptions settings = new ChromeOptions();
-			
-			if (browser.contains("download")) {
-				// To define download file location
-				downloadPath = System.getProperty("user.dir") + "\\src\\main\\java\\automation";
-				HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-				chromePrefs.put("profile.default_content_settings.popups", 0);
-				chromePrefs.put("download.default_directory", downloadPath);
-				settings.setExperimentalOption("prefs", chromePrefs);
-				
-				if (browser.contains("headless")) {
-					settings.addArguments("headless"); // To run chrome in background without showing on screen
-				}
+			// To define download file location
+			downloadPath = System.getProperty("user.dir") + "\\src\\main\\java\\automation";
+			HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+			chromePrefs.put("profile.default_content_settings.popups", 0);
+			chromePrefs.put("download.default_directory", downloadPath);
+			settings.setExperimentalOption("prefs", chromePrefs);
+
+			if (browser.contains("headless")) {
+				settings.addArguments("headless"); // To run chrome in background without showing on screen
 			}
 			driver = new ChromeDriver(settings);
 		}
@@ -74,7 +71,7 @@ public class Base {
 		return driver;
 
 	}
-	
+
 	public String getScreen(String testname, WebDriver driver) throws IOException {
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String outputFile = System.getProperty("user.dir") + "\\reports\\" + testname + ".png";
@@ -82,9 +79,9 @@ public class Base {
 
 		return outputFile; // We are returning file path to attach this in report otherwise ignore return
 	}
-	
-	public void deleteReport() throws IOException{
-		File delete=new File(System.getProperty("user.dir")+"\\reports\\");
+
+	public void deleteReport() throws IOException {
+		File delete = new File(System.getProperty("user.dir") + "\\reports\\");
 		FileUtils.cleanDirectory(delete);
 	}
 }
