@@ -15,6 +15,10 @@ import org.testng.annotations.Test;
 import widgets.Accordian;
 import widgets.AutoComplete;
 import widgets.DatePicker;
+import widgets.Menu;
+import widgets.ProgressBar;
+import widgets.Slider;
+import widgets.ToolTips;
 
 public class WidgetsTest extends Base {
 	WebDriver driver;
@@ -109,6 +113,76 @@ public class WidgetsTest extends Base {
 				break;
 			}
 		}
+	}
+
+	@Test
+	public void verifySlider() throws InterruptedException {
+		Actions mouse = new Actions(driver);
+		mouse.scrollByAmount(0, 200).build().perform();
+		Slider slider = new Slider(driver);
+		slider.clickSlider().click();
+
+		int value = 25;
+		for (int i = 0; i < value; i++) {
+			slider.moveSlider().sendKeys(Keys.ARROW_RIGHT);
+		}
+
+		int text = Integer.parseInt(slider.verifySlider().getAttribute("value"));
+
+		Assert.assertEquals(text, (value + 25));
+	}
+
+	@Test
+	public void verifyProgress() {
+		Actions mouse = new Actions(driver);
+		mouse.scrollByAmount(0, 200).build().perform();
+		ProgressBar bar = new ProgressBar(driver);
+		bar.clickProgressBar().click();
+
+		bar.startButton().click();
+		while (!bar.progressBar().getText().equalsIgnoreCase("50%")) {
+		}
+		bar.startButton().click();
+
+		Assert.assertEquals(bar.progressBar().getText(), "50%");
+	}
+
+	@Test
+	public void verifyTooltip() throws InterruptedException {
+		Actions mouse = new Actions(driver);
+		mouse.scrollByAmount(0, 350).build().perform();
+		ToolTips tool = new ToolTips(driver);
+		tool.clickToolTips().click();
+
+		mouse.moveToElement(tool.hoverMe()).perform();
+		String text = tool.verifyTooltip().getText();
+		Assert.assertEquals(text, "You hovered over the Button");
+
+		mouse.moveToElement(tool.hoverTextField()).perform();
+		Thread.sleep(500);
+		text = tool.verifyTooltip().getText();
+		Assert.assertEquals(text, "You hovered over the text field");
+	}
+
+	@Test
+	public void verifyMenu() {
+		Actions mouse = new Actions(driver);
+		mouse.scrollByAmount(0, 400).build().perform();
+		Menu menu = new Menu(driver);
+		menu.clickMenu().click();
+
+		mouse.moveToElement(menu.mainItem1()).perform();
+		mouse.moveToElement(menu.mainItem3()).perform();
+		mouse.moveToElement(menu.mainItem2()).perform();
+
+		for (int i = 0; i < menu.subItems().size(); i++) {
+			mouse.moveToElement(menu.subItems().get(i)).perform();
+		}
+
+		mouse.moveToElement(menu.subSubList()).perform();
+		mouse.moveToElement(menu.subSubItem1()).perform();
+		mouse.moveToElement(menu.subSubItem2()).perform();
+		
 	}
 
 	@AfterTest

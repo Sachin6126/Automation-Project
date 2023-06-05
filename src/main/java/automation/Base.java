@@ -19,7 +19,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Base {
-	public WebDriver driver;
+	WebDriver driver;
 	String url;
 	String path;
 	String downloadPath;
