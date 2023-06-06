@@ -11,12 +11,12 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import widgets.Accordian;
 import widgets.AutoComplete;
 import widgets.DatePicker;
 import widgets.Menu;
 import widgets.ProgressBar;
+import widgets.SelectMenu;
 import widgets.Slider;
 import widgets.ToolTips;
 
@@ -154,12 +154,13 @@ public class WidgetsTest extends Base {
 		ToolTips tool = new ToolTips(driver);
 		tool.clickToolTips().click();
 
+		Thread.sleep(500);
 		mouse.moveToElement(tool.hoverMe()).perform();
 		String text = tool.verifyTooltip().getText();
 		Assert.assertEquals(text, "You hovered over the Button");
 
 		mouse.moveToElement(tool.hoverTextField()).perform();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		text = tool.verifyTooltip().getText();
 		Assert.assertEquals(text, "You hovered over the text field");
 	}
@@ -182,7 +183,39 @@ public class WidgetsTest extends Base {
 		mouse.moveToElement(menu.subSubList()).perform();
 		mouse.moveToElement(menu.subSubItem1()).perform();
 		mouse.moveToElement(menu.subSubItem2()).perform();
-		
+	}
+
+	@Test
+	public void verifySelectMenu() throws InterruptedException {
+		Actions mouse = new Actions(driver);
+		mouse.scrollByAmount(0, 500).build().perform();
+		SelectMenu menu = new SelectMenu(driver);
+		menu.clickSelectMenu().click();
+
+		Thread.sleep(2000);
+		menu.selectGroup().sendKeys("roo");
+		menu.selectGroup().sendKeys(Keys.ENTER);
+		menu.selectTitle().sendKeys("d");
+		menu.selectTitle().sendKeys(Keys.ENTER);
+
+		Select color = new Select(menu.oldSelectMenu());
+		color.selectByIndex(6);
+
+		mouse.scrollByAmount(0, 200).build().perform();
+
+		menu.selectMultiple().sendKeys("r");
+		for (int i = 0; i < 4; i++) {
+			menu.selectMultiple().sendKeys(Keys.ENTER);
+		}
+
+		Select cars = new Select(menu.selectCars());
+		cars.selectByIndex(1);
+		cars.selectByIndex(2);
+		String expected[]= {"Saab","opel"};
+		for(int i=0;i<cars.getAllSelectedOptions().size();i++) {
+		String text=cars.getAllSelectedOptions().get(i).getText();
+		Assert.assertEquals(text, expected[i]);
+		}
 	}
 
 	@AfterTest
