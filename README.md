@@ -2,6 +2,7 @@
   <img src="file.svg" style="width: 100%;" alt="Click to see the source">
 </div>
 
+
 # Automation Project
 
 This is a java based sample project which automates the elements of the [DEMOQA](https://demoqa.com) website.
