@@ -44,6 +44,7 @@ I covered almost every elements of the website like radio button, check boxes, t
 <ul>
 <li><a href="https://github.com/Sachin6126">@Sachin6126</a></li>
 </ul>
+</body>
 
 <div style="width: 100%;">
   <img src="file.svg" style="width: 100%;" alt="Click to see the source">
