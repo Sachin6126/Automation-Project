@@ -1,4 +1,4 @@
-<html><body bgcolor="blue">
+<html><body style="background-color:powderblue;">
    <h1 id="automation-project">Automation Project</h1>
 <p>This is a java based sample project which automates the elements of the <a href="https://demoqa.com">DEMOQA</a> website.
 I covered almost every elements of the website like radio button, check boxes, text box, buttons, calender, etc.</p>
