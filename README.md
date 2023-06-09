@@ -1,20 +1,5 @@
 <div style="width: 100%;">
   <img src="file.svg" style="width: 100%;" alt="Click to see the source">
-  
-  # Automation Project
-
-This is a java based sample project which automates the elements of the [DEMOQA](https://demoqa.com) website.
-I covered almost every elements of the website like radio button, check boxes, text box, buttons, calender, etc.
-
-
-## Tools and Technologies Used
-
-1. [Java](https://www.java.com/en/)
-2. [Selenium WebDriver](https://www.selenium.dev)
-3. [TestNG](https://testng.org/doc/)
-4. [Maven](https://maven.apache.org)
-5. [Extent Report](https://www.extentreports.com)
-
 </div>
 
 # Automation Project
