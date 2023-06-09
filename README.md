@@ -1,4 +1,3 @@
-<body bgcolor="black" , text="white">
 <h1 id="automation-project">Automation Project</h1>
 <p>This is a java based sample project which automates the elements of the <a href="https://demoqa.com">DEMOQA</a> website.
 I covered almost every elements of the website like radio button, check boxes, text box, buttons, calender, etc.</p>
@@ -18,9 +17,7 @@ I covered almost every elements of the website like radio button, check boxes, t
 <li>Take Screenshot on Every Test Failure</li>
 </ul>
 <h2 id="sample-test-report">Sample Test Report</h2>
-
-        
-        
+<p><img src="https://raw.githubusercontent.com/Sachin6126/Automation-Project/master/Screenshot.png" alt="Test Report Sample"></p>
 <h2 id="install-dependencies-first">Install Dependencies First</h2>
 <p>Download and Install Java</p>
 <pre><code class="lang-bash">  http<span class="hljs-variable">s:</span>//www.java.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">en</span>/download/
@@ -44,7 +41,7 @@ I covered almost every elements of the website like radio button, check boxes, t
 <ul>
 <li><a href="https://github.com/Sachin6126">@Sachin6126</a></li>
 </ul>
-</body>
+
 
 <div style="width: 100%;">
   <img src="file.svg" style="width: 100%;" alt="Click to see the source">
