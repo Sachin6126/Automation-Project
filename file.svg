@@ -29,7 +29,9 @@ I covered almost every elements of the website like radio button, check boxes, t
 <li>Take Screenshot on Every Test Failure</li>
 </ul>
 <h2 id="sample-test-report">Sample Test Report</h2>
-<p><img src="https://raw.githubusercontent.com/Sachin6126/Automation-Project/master/Screenshot.png" alt="Test Report Sample"></p>
+
+        
+        
 <h2 id="install-dependencies-first">Install Dependencies First</h2>
 <p>Download and Install Java</p>
 <pre><code class="lang-bash">  http<span class="hljs-variable">s:</span>//www.java.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">en</span>/download/
