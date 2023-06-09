@@ -9,18 +9,8 @@
       </style>
 
       <div class="container">
-       <svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        .container {
-          background-color: black;
-          color: white;
-        }
-      </style>
-
-      <div class="container">
-        # Automation Project
+ 
+# Automation Project
 
 This is a java based sample project which automates the elements of the [DEMOQA](https://demoqa.com) website.
 I covered almost every elements of the website like radio button, check boxes, text box, buttons, calender, etc.
@@ -88,10 +78,6 @@ Run Project
 ## Authors
 
 - [@Sachin6126](https://github.com/Sachin6126)
-      </div>
-    </div>
-  </foreignObject>
-</svg>
       </div>
     </div>
   </foreignObject>
