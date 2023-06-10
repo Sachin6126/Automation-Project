@@ -10,7 +10,6 @@ import com.aventstack.extentreports.ExtentTest;
 public class Listeners extends Base implements ITestListener {
 	ExtentTest test;
 	ExtReport rp = new ExtReport();
-
 	ExtentReports report = rp.getReports();
 
 	@Override
@@ -26,7 +25,7 @@ public class Listeners extends Base implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getThrowable());
-		
+
 		String name = result.getMethod().getMethodName();
 		WebDriver driver = null;
 
@@ -47,30 +46,25 @@ public class Listeners extends Base implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		test.skip("Test Skipped");
-
 	}
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
-
+		test.info("Partial Success");
 	}
 
 	@Override
 	public void onTestFailedWithTimeout(ITestResult result) {
-		// TODO Auto-generated method stub
-
+		test.info("Timeout");
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-
 		report.flush();
 	}
 

@@ -142,9 +142,8 @@ public class WidgetsTest extends Base {
 		bar.startButton().click();
 		while (!bar.progressBar().getText().equalsIgnoreCase("50%")) {
 		}
-		bar.startButton().click();
-
 		Assert.assertEquals(bar.progressBar().getText(), "50%");
+		bar.startButton().click();
 	}
 
 	@Test
@@ -191,8 +190,8 @@ public class WidgetsTest extends Base {
 		mouse.scrollByAmount(0, 500).build().perform();
 		SelectMenu menu = new SelectMenu(driver);
 		menu.clickSelectMenu().click();
+		driver.navigate().refresh();
 
-		Thread.sleep(2000);
 		menu.selectGroup().sendKeys("roo");
 		menu.selectGroup().sendKeys(Keys.ENTER);
 		menu.selectTitle().sendKeys("d");
@@ -211,10 +210,10 @@ public class WidgetsTest extends Base {
 		Select cars = new Select(menu.selectCars());
 		cars.selectByIndex(1);
 		cars.selectByIndex(2);
-		String expected[]= {"Saab","opel"};
-		for(int i=0;i<cars.getAllSelectedOptions().size();i++) {
-		String text=cars.getAllSelectedOptions().get(i).getText();
-		Assert.assertEquals(text, expected[i]);
+		String expected[] = { "Saab", "Opel" };
+		for (int i = 0; i < cars.getAllSelectedOptions().size(); i++) {
+			String text = cars.getAllSelectedOptions().get(i).getText();
+			Assert.assertEquals(text, expected[i]);
 		}
 	}
 
