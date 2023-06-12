@@ -24,6 +24,12 @@
 			<class name="automation.WidgetsTest"></class>
 		</classes>
 	</test>
+	<test name="Test Interaction">
+		<classes>
+			<class name="automation.Interactions"></class>
+		</classes>
+	</test>
+
 	<!--Test -->
 </suite> <!--
 Suite -->

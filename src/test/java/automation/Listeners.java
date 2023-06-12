@@ -1,20 +1,36 @@
 package automation;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 public class Listeners extends Base implements ITestListener {
+	WebDriver driver = null;
+	Capabilities cap;
+	String browserInfo;
+
 	ExtentTest test;
 	ExtReport rp = new ExtReport();
 	ExtentReports report = rp.getReports();
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		test = report.createTest(result.getMethod().getMethodName()).assignAuthor("Sachin").assignDevice("Chrome");
+		try {
+			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
+					.get(result.getInstance());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		cap = ((RemoteWebDriver) driver).getCapabilities();
+		browserInfo = cap.getBrowserName();
+
+		test = report.createTest(result.getMethod().getMethodName()).assignAuthor("Sachin").assignDevice(browserInfo);
 	}
 
 	@Override
@@ -27,7 +43,7 @@ public class Listeners extends Base implements ITestListener {
 		test.fail(result.getThrowable());
 
 		String name = result.getMethod().getMethodName();
-		WebDriver driver = null;
+		driver = null;
 
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")

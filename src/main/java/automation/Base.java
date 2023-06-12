@@ -69,7 +69,6 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		return driver;
-
 	}
 
 	public String getScreen(String testname, WebDriver driver) throws IOException {

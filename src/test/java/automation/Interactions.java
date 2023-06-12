@@ -26,7 +26,7 @@ public class Interactions extends Base {
 	}
 
 	@Test
-	public void verifySrotable() {
+	public void verifySortable() {
 		Actions mouse = new Actions(driver);
 		mouse.scrollByAmount(0, 500).perform();
 		Sortable sort = new Sortable(driver);
